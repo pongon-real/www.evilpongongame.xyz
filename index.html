@@ -42,9 +42,26 @@ undertale.
 <table border="1" cellpadding="8" bgcolor="#ffffff" width="450">
 <tr><td>
 <b>event thing</b><br>
-nothing forced right now.
+<span id="eventtext">loading...</span>
 </td></tr>
 </table>
+
+<script>
+fetch("EVENTFORCE")
+  .then(function(res){ return res.text(); })
+  .then(function(txt){
+    txt = txt.trim();
+    var el = document.getElementById("eventtext");
+    if (txt.length === 0) {
+      el.innerHTML = "nothing forced right now.";
+    } else {
+      el.innerHTML = txt;
+    }
+  })
+  .catch(function(){
+    document.getElementById("eventtext").innerHTML = "nothing forced right now.";
+  });
+</script>
 
 <br><hr width="80%"><br>
 
@@ -53,13 +70,13 @@ nothing forced right now.
 &nbsp;-&nbsp;
 <a href="https://piratelad.itch.io/evil-pongon-game">demo</a>
 &nbsp;-&nbsp;
-<a href="https://discord.gg/P89M4mxpAW">discord</a>
+<a href="https://discord.gg/4Myk35ex32">discord</a>
 &nbsp;-&nbsp;
 <a href="https://github.com/pongon-real/evilpongongame.xyz">github</a>
 </p>
 
 <p style="font-size:11px; color:#555555;">
-site still wip, more later probably. official site for evil pongon game.
+site still wip, more later probably. not affiliated with valve.
 </p>
 
 </center>
